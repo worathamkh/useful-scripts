@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python ~/git/youtube-mpv/ytdl_server.py

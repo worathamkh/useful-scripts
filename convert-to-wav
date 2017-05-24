@@ -1,0 +1,24 @@
+#!/bin/bash
+# Batch convert audio files to wav
+# Requires first argument to be infile file type
+
+intype="$1"
+outtype="wav"
+#find *.$intype | while IFS= read -r infile ; do
+for infile in *.$intype; do
+    #infile=$(echo $infile)
+    outfile=${infile%.$intype}.$outtype
+    #outfile=$infile.wav
+    #outfile=$(echo $outfile)
+    echo "$infile -> $outfile"
+    echo "$infile -> $outfile"
+    echo "$infile -> $outfile"
+    echo "$infile -> $outfile"
+    echo "$infile -> $outfile"
+    avconv -i "$infile" -f "$outtype" "$outfile"
+    echo "$infile -> $outfile"
+    echo "$infile -> $outfile"
+    echo "$infile -> $outfile"
+    echo "$infile -> $outfile"
+    echo "$infile -> $outfile"
+done

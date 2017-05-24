@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+
+import binascii
+import sys
+
+h = sys.stdin.read().replace(' ','').replace('\n','')
+b = binascii.a2b_hex(h)
+print(b)

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+sudo apt-add-repository -y ppa:octave/stable
+sudo add-apt-repository -y ppa:tista/adapta
+sudo add-apt-repository -y ppa:me-davidsansome/clementine
+sudo add-apt-repository -y ppa:nathan-renniewaldock/flux
+sudo add-apt-repository -y ppa:webupd8team/y-ppa-manager
+
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt-get install -y \
+  build-essential libssl-dev libffi-dev python-dev libcurl4-gnutls-dev libexpat1-dev gettext \
+  htop y-ppa-manager qt4-qtconfig unp \
+  vim emacs gimp inkscape \
+  python3 python3-pip \
+  octave octave-control octave-image octave-io octave-optim octave-signal octave-statistics \
+  audacity clementine vlc zathura \
+  fluxgui adapta-gtk-theme
+
+pip3 install numpy
+
+echo "Intel - https://01.org/linuxgraphics/downloads/intel-graphics-update-tool-linux-os-v2.0.4"
+echo "Dropbox - https://www.dropbox.com/th_TH/install-linux"
+echo "Spek - https://github.com/alexkay/spek/blob/v0.8.2/INSTALL.md#bsd-and-gnulinux"
+echo "ImageMagick - https://www.imagemagick.org/script/download.php"

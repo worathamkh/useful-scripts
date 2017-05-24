@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+rotate = int(raw_input())
+letter = raw_input()
+s = ""
+for l in letter:
+    if l.isalpha():
+        if ord(l) >= ord('a'):
+            offset = ord('a')
+        else:
+            offset = ord('A')
+        a = (ord(l) - offset + rotate) % 26 + offset
+        s += chr(a)
+    else: 
+        s += l
+
+print(s)

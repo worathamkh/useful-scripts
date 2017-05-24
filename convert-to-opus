@@ -1,0 +1,19 @@
+#!/bin/bash
+# Batch convert audio files to opus
+# Requires first argument to be infile file type
+
+intype="$1"
+options="$2"
+outtype="opus"
+#find *.$intype | while read infile; do
+for infile in *.$intype; do
+    outfile=${infile%.$intype}.$outtype
+    if [ "$intype" = "flac" ] || [ "$intype" = "wav" ] || [ "$intype" = "ogg" ] ; then
+        opusenc --bitrate 128 $options "$infile" "$outfile"
+        avconv -i "$infile" -map_metadata 0:s:0 "$outfile"
+    else
+        avconv -i "$infile" -f wav pipe:1 | \
+            opusenc --bitrate 128 $options - - | \
+            avconv -i pipe:0 -i "$infile" -map_metadata 1 -codec copy -map 0 "$outfile"
+    fi
+done
