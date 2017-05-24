@@ -18,7 +18,7 @@ sudo apt-get install -y \
   audacity clementine vlc zathura \
   fluxgui adapta-gtk-theme
 
-pip3 install numpy
+pip3 install numpy youtube-dl
 
 echo "Intel - https://01.org/linuxgraphics/downloads/intel-graphics-update-tool-linux-os-v2.0.4"
 echo "Dropbox - https://www.dropbox.com/th_TH/install-linux"
